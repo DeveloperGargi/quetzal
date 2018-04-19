@@ -1,0 +1,25 @@
+{
+  "name": "quetzal",
+  "version": "1.0.0",
+  "description": "aaaaaaaaaaaaaaaa",
+  "main": "skill.js",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongodb": "^3.0.0-rc0",
+    "mysql": "^2.15.0",
+    "url": "^0.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gargi",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "na"
+  },
+  "keywords": [
+    "na"
+  ]
+}
