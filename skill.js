@@ -39,6 +39,33 @@ app.get("/skills", (req, resp) => {
 });
 
 
+
+
+
+//skilllist table service
+
+app.get("/skillslist", (req, resp) => {
+    var con = getDbConnection();
+    con.connect((err) => {
+        if(err) {
+            resp.sendStatus(500);
+            return;
+        }
+        var sql = "Skill_Name FROM skill";
+        var params = [];
+        con.query(sql, params, (err, result) => {
+            con.end();
+            if(err) {
+                resp.sendStatus(500);
+                return;
+            }
+            resp.send(result);   
+        });
+    });
+});
+
+
+
 //Skill table registration service 
 
 app.post("/addskill", (req, resp) => {
@@ -110,5 +137,3 @@ app.post("/editskill", (req, resp) => {
         });
     });    
 });
-
- 
