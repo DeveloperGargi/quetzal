@@ -1,117 +1,105 @@
-<DOCTYPE html>
-        
-        <html lang="en>
-            <head>
-                <!-- Required meta tags -->
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        
-            <!-- Bootstrap CSS -->
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-            <script
-              src="https://code.jquery.com/jquery-3.3.1.min.js"
-              integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-              crossorigin="anonymous"></script>
-        
-              <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-              rel="stylesheet">
-        
-            <title>Hello, world!</title>
-            </head>
-        
-        
-        <body>
-            <!-- Just an image -->
-            <nav class="navbar navbar-light bg-light">
-              <a class="navbar-brand" href="#">
-                <img src="image/img1.jpg" width="30" height="30" alt="">
-              </a>
-            </nav>
-            <div class="container">
+<DOCTYPE html>     
+    <html lang="en>
+        <head>
+            <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+        <script
+          src="https://code.jquery.com/jquery-3.3.1.min.js"
+          integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+          crossorigin="anonymous"></script>
+    
+          <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+
+              <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    
+        <title>Hello, world!</title>
+        </head>
+    
+    
+    <body>
+        <!-- Just an image -->
+        <nav class="navbar navbar-light bg-light">
+          <a class="navbar-brand" href="#">
+            <img src="image/img1.jpg" width="30" height="30" alt="">
+          </a>
+        </nav>
+        <div class="container">
+        <form class="form">
+            <div class="input-group mb-3">
+                <select id="list" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
+                </select>
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button">search</button>
+              </div>
+            </div>
+        </form>
+    
+
+        <div class="row">
+            <div class="col">
+                Name
+            </div>
+            <div class="col">
+                <button class='btn btn-success pull-right' id="btn_add">Add</button>
+            </div>
+        </div>
+        <br/>
+        <div class="card d-none" id="hiden_shown">
+          <div class="card-body">
             <form class="form">
                 <div class="input-group mb-3">
-                    <select id="list" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                    </select>
+                    <input type="text" class="form-control" >
                   <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button">search</button>
+                    <button class="btn btn-outline-secondary" type="button">submit</button>
                   </div>
                 </div>
             </form>
+          </div>
+        </div>
+    <br/>
+        <div class="card">
+            <div class="card-body">
+                <table class="table">
+                    <tbody id="tbody-custom">
+                        
+                    </tbody>
+                </table>
+            </div>	
+        </div>
         
-  
-            <div class="row">
-                <div class="col">
-                    Name
-                </div>
-                <div class="col">
-                    <button class='btn btn-success pull-right' id="btn_add">Add</button>
-                </div>
-            </div>
-            <br/>
-            <div class="card d-none" id="hiden_shown">
-              <div class="card-body">
-                <form class="form">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" >
-                      <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button">submit</button>
-                      </div>
-                    </div>
-                </form>
-              </div>
-            </div>
-        <br/>
-            <div class="card">
-                <div class="card-body">
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <td>Name</td>
-                                <td><i class="material-icons">done</i> <button class="btn btn-light"> Approve</button></td>
-                                <td><i class="material-icons">cancel</i> <button class="btn btn-light"> Reject</button></td>
-                            </tr>
-                            <tr>
-                                <td>Name</td>
-                                <td><i class="material-icons">done</i> <button class="btn btn-light"> Approve</button></td>
-                                <td><i class="material-icons">cancel</i> <button class="btn btn-light"> Reject</button></td>
-                            </tr>
-                            <tr>
-                                <td>Name</td>
-                                <td><i class="material-icons">done</i> <button class="btn btn-light"> Approve</button></td>
-                                <td><i class="material-icons">cancel</i> <button class="btn btn-light"> Reject</button></td>
-                            </tr>
-                            <tr>
-                                <td>Name</td>
-                                <td><i class="material-icons">done</i> <button class="btn btn-light"> Approve</button></td>
-                                <td><i class="material-icons">cancel</i> <button class="btn btn-light"> Reject</button></td>
-                            </tr>
-                            
-                        </tbody>
-                    </table>
-                </div>	
-            </div>
-            
-            </div>
-        
-            <!-- Optional JavaScript -->
-            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-        
-            <script type="text/javascript">
-        
-                $("#btn_add").on("click", function(){
-                    $("#hiden_shown").toggleClass("d-none");
+        </div>   
+        <script type="text/javascript">
+    
+            $("#btn_add").on("click", function(){
+                $("#hiden_shown").toggleClass("d-none");
+            });
+
+            $(document).ready(function(){
+                $.get("https://linkeritsolutions.com/mapsapp/get_all_locations.php", function(data, status){
+
+                    var json = $.parseJSON(data);
+                    console.log(json.locations);
+
+                    $.each(json.locations,function(k,v){
+                            //var vA = $.parseJSON(v);
+                             $("#list").append("<option value='"+ v.title +"'>"+ v.title +"</option>");
+
+                             $("#tbody-custom").append("<tr><td>"+v.title+"</td><td><i class='material-icons'>done</i> <button class='btn btn-light'> Approve</button></td><td><i class='material-icons'>cancel</i> <button class='btn btn-light'> Reject</button></td></tr>");
+                    });
+
                 });
-                
-            </script>
-        
-        </body>
-        
-        </html>
+            });
+            
+        </script>
+    
+    </body>  
+    </html>
