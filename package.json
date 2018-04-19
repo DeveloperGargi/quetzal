@@ -19,6 +19,9 @@
     "type": "git",
     "url": "na"
   },
+"scripts": {
+    "start": "node skill.js"
+},
   "keywords": [
     "na"
   ]
