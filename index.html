@@ -91,7 +91,7 @@
                         var json = $.parseJSON(data);
                         console.log(json);
                         $.each(json,function(k,v){
-                            $("#tbody-custom").append("<tr><td>"+v.Skill_Name+"</td><td><i class='material-icons'>done</i> <button class='btn btn-light'> Approve</button></td><td><i class='material-icons'>cancel</i> <button class='btn btn-light'> Reject</button></td></tr>");
+                            $("#tbody-custom").append("<tr><td>"+v.Skill_Name+"</td><td><i class='material-icons'>done</i> <button class='btn btn-success'> Approve</button></td><td><i class='material-icons'>cancel</i> <button class='btn btn-danger'> Reject</button></td></tr>");
                     
                         });
                     });
@@ -107,7 +107,7 @@
 				        		//var vA = $.parseJSON(v);
 						         $("#list").append("<option value='"+ v.Skill_Name +"'>"+ v.Skill_Name +"</option>");
 
-						         $("#tbody-custom").append("<tr><td>"+v.Skill_Name+"</td><td><i class='material-icons'>done</i> <button class='btn btn-light'> Approve</button></td><td><i class='material-icons'>cancel</i> <button class='btn btn-light'> Reject</button></td></tr>");
+						         $("#tbody-custom").append("<tr><td>"+v.Skill_Name+"</td><td><i class='material-icons'>done</i> <button class='btn btn-success'> Approve</button></td><td><i class='material-icons'>cancel</i> <button class='btn btn-danger'> Reject</button></td></tr>");
 						});
 
 				    });
