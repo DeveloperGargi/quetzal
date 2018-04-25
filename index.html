@@ -39,7 +39,7 @@
                     <select id="list" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
                     </select>
                   <div class="input-group-append">
-                    <button  id="btn_search"class="btn btn-outline-secondary" type="button">search</button>
+                    <button class="btn btn-outline-secondary" type="button">search</button>
                   </div>
                 </div>
             </form>
@@ -86,33 +86,23 @@
                 $("#btn_add").on("click", function(){
                     $("#hiden_shown").toggleClass("d-none");
                 });
-                $("#btn_search").on("click",function(){
-                    $.get("https://192.168.42.35/searchskill",function(data,status){
-                        var json = $.parseJSON(data);
-                        console.log(json);
-                        $.each(json,function(k,v){
-                            $("#tbody-custom").append("<tr><td>"+v.Skill_Name+"</td><td><i class='material-icons'>done</i> <button class='btn btn-success'> Approve</button></td><td><i class='material-icons'>cancel</i> <button class='btn btn-danger'> Reject</button></td></tr>");
-                    
-                        });
-                    });
-                });
+							  
 
                 $(document).ready(function(){
-                	$.get("https://192.168.42.35/skillslist", function(data, status){
+                	$.get("https://linkeritsolutions.com/mapsapp/get_all_locations.php", function(data, status){
 
 				        var json = $.parseJSON(data);
-				        console.log(json);
+				        console.log(json.locations);
 
-				        $.each(json,function(k,v){
+				        $.each(json.locations,function(k,v){
 				        		//var vA = $.parseJSON(v);
-						         $("#list").append("<option value='"+ v.Skill_Name +"'>"+ v.Skill_Name +"</option>");
+						         $("#list").append("<option value='"+ v.title +"'>"+ v.title +"</option>");
 
-						         $("#tbody-custom").append("<tr><td>"+v.Skill_Name+"</td><td><i class='material-icons'>done</i> <button class='btn btn-success'> Approve</button></td><td><i class='material-icons'>cancel</i> <button class='btn btn-danger'> Reject</button></td></tr>");
+						         $("#tbody-custom").append("<tr><td>"+v.title+"</td><td><i class='material-icons'>done</i> <button class='btn btn-success'> Approve</button></td><td><i class='material-icons'>cancel</i> <button class='btn btn-danger'> Reject</button></td></tr>");
 						});
 
 				    });
                 });
-            
                 
             </script>
         
