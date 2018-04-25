@@ -101,7 +101,7 @@ app.post("/searchskill", (req, resp) => {
             return;
         }
         var params = [ req.body.Skill_Name];
-    var sql = "SELECT * FROM Skill WHERE Skill_Name=?";
+    var sql = "SELECT * FROM Skill WHERE Skill_Name LIKE ?";
         con.query(sql, params, (err, result) => {
             con.end();
             if(err) {
