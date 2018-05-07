@@ -102,16 +102,16 @@
 							  
 
                 $(document).ready(function(){
-                	$.get("/skillslist", function(data, status){
+                	$.get("/"https://linkeritsolutions.com/mapsapp/get_all_locations.php", function(data, status){
 
 				        var json = $.parseJSON(data);
-				        console.log(json);
+				        console.log(json.locations);
 
 				        $.each(json,function(k,v){
 				        		//var vA = $.parseJSON(v);
-						         $("#list").append("<option value='"+ v.Skill_Name +"'>"+ v.title +"</option>");
+						         $("#list").append("<option value='"+ v.title +"'>"+ v.title +"</option>");
 
-						         $("#tbody-custom").append("<tr><td>"+v.Skill_Name+"</td><td><i class='material-icons'>done</i> <button class='btn btn-success'> Approve</button></td><td><i class='material-icons'>cancel</i> <button class='btn btn-danger'> Reject</button></td></tr>");
+						         $("#tbody-custom").append("<tr><td>"+v.title"</td><td><i class='material-icons'>done</i> <button class='btn btn-success'> Approve</button></td><td><i class='material-icons'>cancel</i> <button class='btn btn-danger'> Reject</button></td></tr>");
 						});
 
 				    });
