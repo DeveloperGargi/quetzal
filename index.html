@@ -34,12 +34,12 @@
               </a>
             </nav>
             <div class="container">
-            <form class="form">
+            <form class="form" action="/searchskill" method="GET">
                 <div class="input-group mb-3">
                     <select id="list" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
                     </select>
                   <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button">search</button>
+                    <button id="buttonsearch" class="btn btn-outline-secondary" type="button">search</button>
                   </div>
                 </div>
             </form>
@@ -56,7 +56,7 @@
             <br/>
             <div class="card d-none" id="hiden_shown">
               <div class="card-body">
-                <form class="form">
+                <form class="form" action="/addskill" method="POST">
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" >
                       <div class="input-group-append">
@@ -76,8 +76,7 @@
                     </table>
                 </div>	
             </div>
-            
-            </div>
+  </div>
         
         
         
@@ -86,19 +85,33 @@
                 $("#btn_add").on("click", function(){
                     $("#hiden_shown").toggleClass("d-none");
                 });
+                $("#buttonsearch").on("click",function(){
+                    $.get("/searchskill", function(data, status){
+
+				        var json = $.parseJSON(data);
+				        console.log(json);
+
+				        $.each(json,function(k,v){
+				        		//var vA = $.parseJSON(v);
+
+						         $("#tbody-custom").append("<tr><td>"+v.Skill_Name+"</td><td><i class='material-icons'>done</i> <button class='btn btn-success'> Approve</button></td><td><i class='material-icons'>cancel</i> <button class='btn btn-danger'> Reject</button></td></tr>");
+						});
+
+				    });
+                });
 							  
 
                 $(document).ready(function(){
-                	$.get("https://linkeritsolutions.com/mapsapp/get_all_locations.php", function(data, status){
+                	$.get("/skillslist", function(data, status){
 
 				        var json = $.parseJSON(data);
-				        console.log(json.locations);
+				        console.log(json);
 
-				        $.each(json.locations,function(k,v){
+				        $.each(json,function(k,v){
 				        		//var vA = $.parseJSON(v);
-						         $("#list").append("<option value='"+ v.title +"'>"+ v.title +"</option>");
+						         $("#list").append("<option value='"+ v.Skill_Name +"'>"+ v.title +"</option>");
 
-						         $("#tbody-custom").append("<tr><td>"+v.title+"</td><td><i class='material-icons'>done</i> <button class='btn btn-success'> Approve</button></td><td><i class='material-icons'>cancel</i> <button class='btn btn-danger'> Reject</button></td></tr>");
+						         $("#tbody-custom").append("<tr><td>"+v.Skill_Name+"</td><td><i class='material-icons'>done</i> <button class='btn btn-success'> Approve</button></td><td><i class='material-icons'>cancel</i> <button class='btn btn-danger'> Reject</button></td></tr>");
 						});
 
 				    });
