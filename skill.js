@@ -75,8 +75,8 @@ app.post("/addskill", (req, resp) => {
             resp.sendStatus(500);
             return;
         }
-        var params = [ req.body.Skill_Name,req.body.Status ];
-    var sql = "INSERT INTO Skill (Skill_Name,Status) VALUES(?,?)";
+        var params = [ req.body.Skill_Name ];
+    var sql = "INSERT INTO Skill (Skill_Name) VALUES(?)";
         con.query(sql, params, (err, result) => {
             con.end();
             if(err) {
